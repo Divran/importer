@@ -26,7 +26,7 @@ Just a simple javascript/jQuery thingy which can import/include other html files
     // Next, when the user clicks a button, load a page
     $("#someButton").click(function() {
       importer.load(
-        ".container",
+        "#container",
         "about.html",
         function(){console.log("the about page just loaded!");},
         "about"
