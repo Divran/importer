@@ -2,7 +2,9 @@
 	Importer
 
 	Allows you to "import" html pages into other html pages using some simple jquery magic
-
+	
+	source: https://github.com/Divran/importer
+	
 	Made by Divran, 04/06/2017
 */
 
