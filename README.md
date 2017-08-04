@@ -1,7 +1,7 @@
 # importer
 Just a simple javascript/jQuery thingy which can import/include other html files
 
-# how to use
+# How to use
 
 ```HTML
   <!-- first import jquery and this file (order doesn't matter) -->
@@ -36,3 +36,5 @@ Just a simple javascript/jQuery thingy which can import/include other html files
     // And we're done.
   </script>
 ```
+
+# Don't forget to read the file itself for more documentation on each function!
