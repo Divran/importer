@@ -23,7 +23,7 @@ Just a simple javascript/jQuery thingy which can import/include other html files
         function(){console.log("I'm alive!");},
         "index"
       );
-  	});
+    });
   
     // Next, when the user clicks a button, load a page
     $("#someButton").click(function() {
