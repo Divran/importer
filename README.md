@@ -3,6 +3,8 @@ Just a simple javascript/jQuery thingy which can import/include other html files
 
 # How to use
 
+## Don't forget to read the file itself for more documentation on each function!
+
 ```HTML
   <!-- first import jquery and this file (order doesn't matter) -->
   <script type="text/javascript" src="js/importer.js"></script>
@@ -36,5 +38,3 @@ Just a simple javascript/jQuery thingy which can import/include other html files
     // And we're done.
   </script>
 ```
-
-# Don't forget to read the file itself for more documentation on each function!
