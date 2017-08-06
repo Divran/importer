@@ -90,12 +90,12 @@ var importer = (function() {
 
 		$.get( url, function(data) {
 			elem.html( data );
-			if (callback) {callback();}
+			if (callback) {callback(elemstr,url,pagename);}
 		});
 	}
 
 	/*
-		impoter.initialize( elem, valid_pages [, callback, default_page] );
+		impoter.initialize( elem, valid_pages [, callback, default_page, history_callback] );
 
 		This is meant to be called once from the main index.html page of your website.
 		Given an object of all valid pagenames, it will check if the current search query
@@ -117,12 +117,15 @@ var importer = (function() {
 		If no page is specified, or no match is found, optionally load the default page instead.
 		The default page is a string which references to a page found in the valid pages list.
 	*/
-	importer.initialize = function( elemstr, valid_pages, callback, default_page ) {
+	importer.initialize = function( elemstr, valid_pages, callback, default_page, history_callback ) {
 		$(window).off("popstate.importer");
 		$(window).on("popstate.importer",function(event) {
 			var orig = event.originalEvent;
 			if (orig.state) {
-				importer.load( orig.state.elemstr, orig.state.url, function(){}, orig.state.pagename, true );
+				var clbk = function(){};
+				if (history_callback) {clbk = history_callback;}
+
+				importer.load( orig.state.elemstr, orig.state.url, clbk, orig.state.pagename, true );
 			} else {
 				// if state is invalid, that means the user wants to go back to the default page
 				if (default_page) {
