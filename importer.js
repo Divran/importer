@@ -118,17 +118,13 @@ var importer = (function() {
 		The default page is a string which references to a page found in the valid pages list.
 	*/
 	importer.initialize = function( elemstr, valid_pages, callback, default_page ) {
-		console.log("initialize");
 		$(window).off("popstate.importer");
 		$(window).on("popstate.importer",function(event) {
 			var orig = event.originalEvent;
-			console.log("POPSTATE:",orig);
 			if (orig.state) {
-				console.log("loading page:",orig.state.elemstr, orig.state.url,orig.state.pagename);
 				importer.load( orig.state.elemstr, orig.state.url, function(){}, orig.state.pagename, true );
 			} else {
 				// if state is invalid, that means the user wants to go back to the default page
-				console.log("loading default page:",elemstr, valid_pages[default_page],default_page);
 				if (default_page) {
 					importer.load( elemstr, valid_pages[default_page], callback, default_page, true );
 				}
