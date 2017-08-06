@@ -60,14 +60,18 @@ var importer = (function() {
 
 	/*
 		importer.load( elemstr, url [, callback, page name] );
+
 		The main function of this library, it loads the file found at <url> and
 		inserts it into the specified element. The callback function is called
 		when the loading is completed.
+
 		Elemstr must be a unique identifier compatible with jquery's $() function.
 		It MUST be a string (not a jquery object), and it MUST be unique,
 		or else the history feature will not work. I suggest you use IDs ('$("#container")' etc)
+
 		The page name parameter is optional. If specified, it will adjust the url
 		in the browser's address bar, and also push to the browser's history.
+
 		(Note: The "nohistory" parameter is meant to be used internally only.
 		It prevents the pushing of history even if a page name is given)
 	*/
@@ -92,20 +96,24 @@ var importer = (function() {
 
 	/*
 		impoter.initialize( elem, valid_pages [, callback, default_page] );
+
 		This is meant to be called once from the main index.html page of your website.
 		Given an object of all valid pagenames, it will check if the current search query
 		of the page is set to one of these pages, and if so, load it.
 		It also binds to the "popstate" event, to catch this event and properly redirect when the user
 		clicks the back button in their browser.
+
 		Elemstr must be a unique identifier compatible with jquery's $() function.
 		It MUST be a string (not a jquery object), and it MUST be unique,
 		or else the history feature will not work. I suggest you use IDs ('$("#container")' etc)
+
 		The structure of the valid pages object must be
 		{
 			pagename1:url1,
 			pagename2:url2,
 			...
 		}
+		
 		If no page is specified, or no match is found, optionally load the default page instead.
 		The default page is a string which references to a page found in the valid pages list.
 	*/
